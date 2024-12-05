@@ -6,19 +6,19 @@
 /*   By: pahenri2 <pahenri2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 22:52:54 by paulo             #+#    #+#             */
-/*   Updated: 2024/12/05 16:24:07 by pahenri2         ###   ########.fr       */
+/*   Updated: 2024/12/05 16:49:36 by pahenri2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include "libft.h"
 
-static void	free_mem(char **list, size_t len)
+static void	free_mem(char **list)
 {
 	size_t	i;
 
 	i = 0;
-	while (i < len)
+	while (list[i])
 		free(list[i++]);
 	free(list);
 }
@@ -95,7 +95,7 @@ char	**ft_split(char const *s, char c)
 		{
 			list_splited[j] = extract_word(s, i, word_len(s, c, i));
 			if (!list_splited[j++])
-				return (free_mem(list_splited, j), NULL);
+				return (free_mem(list_splited), NULL);
 			i += word_len(s, c, i);
 		}
 		else
