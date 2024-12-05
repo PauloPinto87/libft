@@ -6,7 +6,7 @@
 /*   By: pahenri2 <pahenri2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 22:52:54 by paulo             #+#    #+#             */
-/*   Updated: 2024/12/05 16:12:10 by pahenri2         ###   ########.fr       */
+/*   Updated: 2024/12/05 16:24:07 by pahenri2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,20 +58,20 @@ static size_t	count_words(const char *str, char sep)
 
 static char	*extract_word(char const *s, size_t start, size_t len)
 {
-	char	*word;
+	char	*new_word;
 	size_t	i;
 
-	word = malloc((len + 1) * sizeof(char));
-	if (!word)
+	new_word = malloc((len + 1) * sizeof(char));
+	if (!new_word)
 		return (NULL);
 	i = 0;
 	while (i < len)
 	{
-		word[i] = s[start + i];
+		new_word[i] = s[start + i];
 		i++;
 	}
-	word[i] = '\0';
-	return (word);
+	new_word[i] = '\0';
+	return (new_word);
 }
 
 char	**ft_split(char const *s, char c)
