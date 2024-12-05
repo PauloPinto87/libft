@@ -6,7 +6,7 @@
 /*   By: pahenri2 <pahenri2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 14:41:53 by paulo             #+#    #+#             */
-/*   Updated: 2024/12/04 12:19:32 by pahenri2         ###   ########.fr       */
+/*   Updated: 2024/12/05 14:04:38 by pahenri2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		start;
 	int		end;
 
+	if (s1 == NULL)
+		return (NULL);
 	start = 0;
 	end = ft_strlen(s1);
 	while (ft_strchr(set, s1[start]) && start < end)
@@ -39,7 +41,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 /*
 int	main(void)
 {
- 	char *s1 = "-+- Pablo +-+";
+ 	char *s1 = NULL;
  	char *ret = ft_strtrim(s1, "+-");
 
  	printf("%s\n", ret);

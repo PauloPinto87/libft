@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paulo <paulo@student.42.fr>                +#+  +:+       +#+        */
+/*   By: pahenri2 <pahenri2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 15:16:44 by paulo             #+#    #+#             */
-/*   Updated: 2024/11/19 09:10:16 by paulo            ###   ########.fr       */
+/*   Updated: 2024/12/05 12:16:25 by pahenri2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,34 +31,16 @@ void	*ft_memset(void *s, int c, size_t n)
 /*
 int	main(void)
 {
-	int		num_v[5];
-	int		i;
+	char	str1[15] = "Paulo Henrique";
+	char	str2[15] = "Paulo Henrique";
 
-	num_v[0] = 1;
-	num_v[1] = 2;
-	num_v[2] = 3;
-	num_v[3] = 4;
-	num_v[4] = 5;
-	ft_memset(num_v, 11, 4);
-	i = 0;
-	while (i < 5)
-	{
-		printf("%d, ", num_v[i]);
-		i++;
-	}
-	printf("\n");
-	num_v[0] = 1;
-	num_v[1] = 2;
-	num_v[2] = 3;
-	num_v[3] = 4;
-	num_v[4] = 5;
-	memset(num_v, 11, 4 * 3);
-	i = 0;
-	while (i < 5)
-	{
-		printf("%d, ", num_v[i]);
-		i++;
-	}
+	printf("before memset %s \n", str1);
+	memset(str1, 'P', 12);
+	printf("after memset %s \n", str1);
+
+	printf("before memeset %s \n", str2);
+	ft_memset(str2, 80, 12);
+	printf("after ft_memset %s \n", str2);
 }
 
 */

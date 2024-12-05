@@ -6,7 +6,7 @@
 /*   By: pahenri2 <pahenri2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 13:40:47 by paulo             #+#    #+#             */
-/*   Updated: 2024/12/04 15:24:13 by pahenri2         ###   ########.fr       */
+/*   Updated: 2024/12/05 13:37:34 by pahenri2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,15 @@ int	main(void)
 	bzero(str, 1);
 	printf("after bzero() in str[0] = %d\n", str[0]);
 	printf("before bzero() in str[1]= %d\n", str[1]);
-	bzero(str, 2);
+	ft_bzero(str, 10);
 	printf("after bzero() in str[1] = %d\n", str[1]);
+
+	i = 0;
+	while (i < 5)
+	{
+		printf("%d, ", str[i]);
+		i++;
+	}
 }
 
 */

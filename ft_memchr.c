@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: paulo <paulo@student.42.fr>                +#+  +:+       +#+        */
+/*   By: pahenri2 <pahenri2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 11:10:59 by paulo             #+#    #+#             */
-/*   Updated: 2024/11/18 07:57:34 by paulo            ###   ########.fr       */
+/*   Updated: 2024/12/05 13:41:42 by pahenri2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,15 @@ int	main(void)
 	c = 'h';
 	printf("\nft_memchr 'h' = %s\n", (char *)ft_memchr(data, c, 27));
 	printf("memchr 'h' = %s\n", (char *)memchr(data, c, 27));
+
+	char *str = NULL; // Cria um ponteiro nulo
+	int *num = ft_memchr(str, 1, 1);
+    if (str == NULL) {
+        printf("O ponteiro é nulo.\n");
+    } else {
+        printf("O ponteiro não é nulo.\n");
+    }
+		printf("O retorno = %d.\n", num[0]);
 }
 
 */

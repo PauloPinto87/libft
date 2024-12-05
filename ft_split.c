@@ -6,12 +6,22 @@
 /*   By: pahenri2 <pahenri2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 22:52:54 by paulo             #+#    #+#             */
-/*   Updated: 2024/12/04 12:31:40 by pahenri2         ###   ########.fr       */
+/*   Updated: 2024/12/05 16:12:10 by pahenri2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include "libft.h"
+
+static void	free_mem(char **list, size_t len)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < len)
+		free(list[i++]);
+	free(list);
+}
 
 static size_t	word_len(char const *s, char sep, size_t pos)
 {
@@ -71,6 +81,8 @@ char	**ft_split(char const *s, char c)
 	size_t	j;
 	char	**list_splited;
 
+	if (s == NULL)
+		return (NULL);
 	qnt_words = count_words(s, c);
 	list_splited = malloc((qnt_words + 1) * sizeof(char *));
 	if (!list_splited)
@@ -82,8 +94,9 @@ char	**ft_split(char const *s, char c)
 		if (word_len(s, c, i))
 		{
 			list_splited[j] = extract_word(s, i, word_len(s, c, i));
+			if (!list_splited[j++])
+				return (free_mem(list_splited, j), NULL);
 			i += word_len(s, c, i);
-			j++;
 		}
 		else
 			i++;

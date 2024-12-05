@@ -6,7 +6,7 @@
 /*   By: pahenri2 <pahenri2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 13:20:09 by paulo             #+#    #+#             */
-/*   Updated: 2024/12/04 17:00:33 by pahenri2         ###   ########.fr       */
+/*   Updated: 2024/12/05 13:35:44 by pahenri2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,13 +43,13 @@ int	ft_atoi(const char *nptr)
 	nptr = extract_int(nptr, &result);
 	return (result * signal_factor);
 }
+
 /*
 int	main(void)
 {
 	char	nptr[] = " \t\v\n\r\f123";
 	char	*nptr_null = NULL;
 	int		x;
-
 
 	x = atoi(nptr);
 	printf("x = atoi(nptr), return =  %d\n", x);
@@ -60,7 +60,14 @@ int	main(void)
 	x = ft_atoi(nptr_null);
 	printf("x  = ft_atoi(nptr_null) / %d\n", x);
 
-	return (0);
+	char *str = NULL; // Cria um ponteiro nulo
+	int num = atoi(str);
+    if (str == NULL) {
+        printf("O ponteiro é nulo.\n");
+    } else {
+        printf("O ponteiro não é nulo.\n");
+    }
+		printf("O retorno = %d.\n", num);
 }
 
 */
